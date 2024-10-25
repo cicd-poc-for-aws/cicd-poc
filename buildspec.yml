@@ -5,5 +5,5 @@ phases:
      commands:
        - echo "Starting gradle build..."
        - chmod +x ./gradlew 
-       - ./gradlew build
+       - ./gradlew build --info
        - echo "Gradle build finished successfully!"
