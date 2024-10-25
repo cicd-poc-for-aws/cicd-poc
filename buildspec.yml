@@ -1,9 +1,13 @@
 version: 0.2
 
 phases:
-   build:
-     commands:
-       - echo "Starting gradle build..."
-       - chmod +x ./gradlew 
-       - ./gradlew build --info
-       - echo "Gradle build finished successfully!"
+  pre_build:
+    commands:
+      - echo If needing exist before testing, here writing.
+      - chmod +x gradlew
+
+  build:
+    commands:
+      - echo "Starting gradle build..."
+      - ./gradlew build --info
+      - echo "Gradle build finished successfully!"
