@@ -1,13 +1,15 @@
 version: 0.2
 
 phases:
-  pre_build:
-    commands:
-      - echo If needing exist before testing, here writing.
-      - chmod +x gradlew
-
   build:
     commands:
-      - echo "Starting gradle build..."
-      - ./gradlew build --info
-      - echo "Gradle build finished successfully!"
+      - echo start build at `date`
+      - ./gradlew build
+artifacts:
+  type: zip
+  files:
+    - ./appspec.yml
+    # - ./hooks/restart.sh
+    - ./build/libs/cicd-poc.jar
+  name: artifact
+  discard-paths: yes
