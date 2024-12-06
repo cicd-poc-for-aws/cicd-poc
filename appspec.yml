@@ -2,18 +2,18 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ec2-user/app/
+    destination: /var/www/html
 permissions:
-  - object: /home/ec2-user
-    pattern: "app"
-    owner: ec2-user
-    group: ec2-user
+  - object: /var/www
+    pattern: "html"
+    owner: root
+    group: root
     type:
       - directory
-  - object: /home/ec2-user/app
+  - object: /var/www/html
     pattern: "**"
-    owner: ec2-user
-    group: ec2-user
+    owner: root
+    group: root
     mode: 444
     type:
       - file
